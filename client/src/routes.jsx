@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
             element: <ProductCategory />,
         },
         {
-            path: "/product/:id",
+            path: "/product/:slug",
             element: <Product />,
         },
         {
