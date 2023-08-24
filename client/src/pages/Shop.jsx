@@ -7,7 +7,7 @@ export default function Shop() {
 
     return (
       <>
-        <div className="bg-white">
+        
           <div>
               {/* Mobile filter dialog
 
@@ -68,7 +68,7 @@ export default function Shop() {
                       <div className="pt-6" id="filter-section-mobile-0">
                         <div className="space-y-6">
                           <div className="flex items-center">
-                            <input id="filter-mobile-color-0" name="color[]" value="white" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-mobile-color-0" name="color[]" value="white" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-mobile-color-0" className="ml-3 min-w-0 flex-1 text-gray-500">White</label>
                           </div>
                         </div>
@@ -91,7 +91,7 @@ export default function Shop() {
                       <div className="pt-6" id="filter-section-mobile-1">
                         <div className="space-y-6">
                           <div className="flex items-center">
-                            <input id="filter-mobile-category-0" name="category[]" value="new-arrivals" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-mobile-category-0" name="category[]" value="new-arrivals" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-mobile-category-0" className="ml-3 min-w-0 flex-1 text-gray-500">New Arrivals</label>
                           </div>
                         </div>
@@ -115,11 +115,11 @@ export default function Shop() {
                       <div className="pt-6" id="filter-section-mobile-2">
                         <div className="space-y-6">
                           <div className="flex items-center">
-                            <input id="filter-mobile-size-0" name="size[]" value="2l" type="radio" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-mobile-size-0" name="size[]" value="2l" type="radio" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-mobile-size-0" className="ml-3 min-w-0 flex-1 text-gray-500">2L</label>
                           </div>
                           <div className="flex items-center">
-                            <input id="filter-mobile-size-0" name="size[]" value="3l" type="radio" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-mobile-size-0" name="size[]" value="3l" type="radio" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-mobile-size-0" className="ml-3 min-w-0 flex-1 text-gray-500">3L</label>
                           </div>
                         </div>
@@ -215,7 +215,7 @@ export default function Shop() {
                       <div className="pt-6" id="filter-section-0">
                         <div className="space-y-4">
                           <div className="flex items-center">
-                            <input id="filter-color-0" name="color[]" value="white" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-color-0" name="color[]" value="white" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-color-0" className="ml-3 text-sm text-gray-600">White</label>
                           </div>
                         </div>
@@ -244,11 +244,11 @@ export default function Shop() {
                       <div className="pt-6" id="filter-section-2">
                         <div className="space-y-4">
                           <div className="flex items-center">
-                            <input id="filter-size-0" name="size[]" value="2l" type="radio" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-size-0" name="size[]" value="2l" type="radio" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-size-0" className="ml-3 text-sm text-gray-600">2L</label>
                           </div>
                           <div className="flex items-center">
-                            <input id="filter-size-0" name="size[]" value="3l" type="radio" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                            <input id="filter-size-0" name="size[]" value="3l" type="radio" className="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500" />
                             <label htmlFor="filter-size-0" className="ml-3 text-sm text-gray-600">3L</label>
                           </div>
                         </div>
@@ -272,7 +272,7 @@ export default function Shop() {
               </section>
             </main>
           </div>
-        </div>
+        
 
       </>
     )

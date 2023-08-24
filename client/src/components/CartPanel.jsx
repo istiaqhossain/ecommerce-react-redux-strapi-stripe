@@ -25,7 +25,7 @@ export default function CartPanel ( { cartPanelToggle, cartPanelToggleHandler } 
         <p className="text-gray-500">Qty {product.quantity}</p>
 
         <div className="flex">
-          <button onClick={() => handleRemoveItem(product.id)} type="button" className="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+          <button onClick={() => handleRemoveItem(product.id)} type="button" className="font-medium text-gray-600 hover:text-gray-500">Remove</button>
         </div>
       </div>
     </div>
@@ -51,11 +51,11 @@ export default function CartPanel ( { cartPanelToggle, cartPanelToggleHandler } 
     </div>
     <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
     <div className="mt-6">
-      <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+      <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-6 py-3 text-base font-medium text-gray-900 shadow-sm hover:bg-gray-200">Checkout</a>
     </div>
     <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
       <p>
-        <button onClick={handleResetCart} type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
+        <button onClick={handleResetCart} type="button" className="font-medium text-text-600 hover:text-text-500">
           Reset Cart
         </button>
       </p>
@@ -67,7 +67,7 @@ export default function CartPanel ( { cartPanelToggle, cartPanelToggleHandler } 
         Cart is empty.
       </p>
       <p>
-        <button onClick={cartPanelToggleHandler} type="button" className="font-medium text-indigo-600 hover:text-indigo-500">Continue shopping.</button>
+        <button onClick={cartPanelToggleHandler} type="button" className="font-medium text-gray-600 hover:text-gray-500">Continue shopping.</button>
       </p>
     </div></>;
   }
@@ -123,7 +123,7 @@ export default function CartPanel ( { cartPanelToggle, cartPanelToggleHandler } 
                     Leaving: "ease-in-out duration-500"
                       From: "opacity-100"
                       To: "opacity-0" */}
-                  <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                  {/* <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                     <button onClick={cartPanelToggleHandler} type="button" className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                       <span className="absolute -inset-2.5"></span>
                       <span className="sr-only">Close panel</span>
@@ -131,11 +131,19 @@ export default function CartPanel ( { cartPanelToggle, cartPanelToggleHandler } 
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
-                  </div>
-
+                  </div> */}
                   <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <h2 className="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">Cart</h2>
+                    <div className="pb-6 px-4 sm:px-6 flex items-start justify-between">
+                      <h2 className="text-lg font-medium text-gray-900" id="slide-over-title">Cart</h2>
+                      <div className="ml-3 flex h-7 items-center">
+                        <button onClick={cartPanelToggleHandler} type="button" className="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                          <span className="absolute -inset-0.5"></span>
+                          <span className="sr-only">Close panel</span>
+                          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                     {cartContent}
                   </div>

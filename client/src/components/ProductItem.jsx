@@ -37,7 +37,7 @@ export default function ProductItem({ product }) {
               </div>
             </div>
             <div className="mt-3">
-              <button onClick={handleAddToCart} className="text-sm py-2 rounded-md bg-gray-100 hover:bg-gray-200 block w-full" type="button">Add to Cart</button>
+              <button onClick={handleAddToCart} className="text-sm py-2 rounded-md text-gray-900 bg-gray-100 hover:bg-gray-200 block w-full" type="button">Add to Cart</button>
             </div>
         </div>
       </>
