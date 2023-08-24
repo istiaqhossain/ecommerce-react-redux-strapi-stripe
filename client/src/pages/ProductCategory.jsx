@@ -4,9 +4,10 @@ import ProductItem from '../components/ProductItem';
 
 export default function ProductCategory() {
   
-  const catId = parseInt(useParams().id);
-  const {data:products, loading, error} = useFetch(`products?populate=*&filters[categories][id][$eq]=${catId}&sort=id:desc`);
-  
+  const catSlug = useParams().slug;
+  const {data:categories} = useFetch(`categories?fields[0]=name&filters[slug][$eq]=${catSlug}&sort=id:desc`);
+  const {data:products, loading, error} = useFetch(`products?populate=*&filters[categories][slug][$eq]=${catSlug}&sort=id:desc`);
+  console.log(categories);
     return (
       <>
         
@@ -130,7 +131,7 @@ export default function ProductCategory() {
 
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900">Product Category</h1>
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900">{categories ? categories[0].attributes.name : 'Category'}</h1>
 
                 <div className="flex items-center">
                   <div className="relative inline-block text-left">

@@ -28,7 +28,6 @@ export default function Header() {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
               <Link to={'/shop'} className="text-sm font-semibold leading-6 text-gray-900">Shop</Link>
-              <Link to={'/product-category/1'} className="text-sm font-semibold leading-6 text-gray-900">Product Category</Link>
               <Link to={'/product/1'} className="text-sm font-semibold leading-6 text-gray-900">Product</Link>
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Checkout</a>
             </div>

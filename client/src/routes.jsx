@@ -25,7 +25,7 @@ const routes = createBrowserRouter([
             element: <Shop />,
         },
         {
-            path: "/product-category/:id",
+            path: "/product-category/:slug",
             element: <ProductCategory />,
         },
         {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function CategoryItem({ category }) {
-
+  console.log(category);
     return (
       <>
         <div className="group relative">
@@ -9,7 +9,7 @@ export default function CategoryItem({ category }) {
             <img src={import.meta.env.VITE_UPLOAD_URL + category?.attributes.featured_image?.data?.attributes?.url} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" />
           </div>
           <h3 className="mt-6 text-sm text-gray-500">
-            <Link to={'/product-category/' + category.id}>
+            <Link to={'/product-category/' + category?.attributes?.slug}>
               <span className="absolute inset-0"></span>
             </Link>
           </h3>

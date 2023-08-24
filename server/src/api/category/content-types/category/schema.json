@@ -24,12 +24,18 @@
       "mappedBy": "categories"
     },
     "featured_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "unique": true
     }
   }
 }
