@@ -25,7 +25,7 @@
       "inversedBy": "products"
     },
     "price": {
-      "type": "integer",
+      "type": "decimal",
       "required": true
     },
     "featured_image": {

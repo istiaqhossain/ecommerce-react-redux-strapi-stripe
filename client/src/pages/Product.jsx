@@ -1,10 +1,35 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import useFetch from "../hooks/useFetch";
+import { addToCart } from "../redux/slices/cartSlice";
 
 export default function Product() {
 
   const productId = parseInt(useParams().id);
   const {data:product, loading, error} = useFetch(`products/${productId}?populate=*`);
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  function handleQuantity( amount ) {
+    let temp = quantity;
+    temp += amount;
+    
+    if ( temp > 0 ) {
+      setQuantity(temp);
+    }
+  }
+
+  function handleAddToCart() {
+    dispatch( addToCart( {
+      id: product?.id,
+      name: product?.attributes.name,
+      price: product?.attributes.price,
+      image: product?.attributes.featured_image?.data?.attributes?.url,
+      quantity: quantity,
+      category: product?.attributes.categories.data[0]?.attributes.name,
+    } ) );
+  }
 
     return (
       <>
@@ -53,22 +78,22 @@ export default function Product() {
                 </div>
               </div>
 
-              <form className="mt-10">
+              <div className="mt-10">
                 <div>
                   <h3 className="text-sm font-medium text-gray-900">Quantity</h3>
 
                   <fieldset className="mt-2">
                     <legend className="sr-only">Choose a quantity</legend>
-                    <div className="mt-2 flex gap-2">
-                      <button type="button" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">-</button>
-                      <input type="number" min="1" max="999" step="1" className="font-bold text-xl w-20 rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:leading-6" />
-                      <button type="button" className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">+</button>
+                    <div className="mt-2 flex items-center">
+                      <button onClick={() => handleQuantity(-1)} type="button" className="rounded-s-md h-11 flex items-center justify-center border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-light text-white hover:bg-indigo-700">-</button>
+                      <span className="h-11 font-bold text-xl w-20 border-0 px-3 py-2 text-center text-gray-900 shadow-sm placeholder:text-gray-400 ring-2 ring-inset ring-indigo-600">{quantity}</span>
+                      <button onClick={() => handleQuantity(1)} type="button" className="rounded-e-md h-11 flex items-center justify-center border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-light text-white hover:bg-indigo-700">+</button>
                     </div>
                   </fieldset>
                 </div>
 
-                <button type="submit" className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to cart</button>
-              </form>
+                <button onClick={handleAddToCart} type="buton" className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to cart</button>
+              </div>
             </div>
           </div>
         </div>
