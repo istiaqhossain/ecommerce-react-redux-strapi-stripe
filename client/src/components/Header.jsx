@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import CartPanel from "./CartPanel";
 
 export default function Header() {
+  const [cartPanelToggle, setCartPanelToggle] = useState(false);
+  const cartProducts = useSelector( state => state.cart.products );
+
+  function handleCartPanelToggle() {
+    setCartPanelToggle(!cartPanelToggle);
+  }
 
     return (
       <>
@@ -24,7 +33,10 @@ export default function Header() {
               <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Checkout</a>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Cart</a>
+              <button onClick={handleCartPanelToggle} className="text-sm font-semibold leading-6 text-gray-900">
+                Cart 
+                <sup className="ml-1">{ cartProducts.length }</sup>
+              </button>
             </div>
           </nav>
           {/* Mobile menu, show/hide based on menu open state. */}
@@ -59,6 +71,7 @@ export default function Header() {
             </div>
           </div>
         </header>
+        <CartPanel cartPanelToggle={cartPanelToggle} cartPanelToggleHandler={handleCartPanelToggle} />
       </>
     )
 }
