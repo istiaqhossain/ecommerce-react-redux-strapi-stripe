@@ -7,19 +7,21 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      const item = state.products.find( item => item.id === action.payload.id );
+      if ( action.payload.quantity > 0 ) {
+        const item = state.products.find( item => item.id === action.payload.id );
 
-      if ( item ) {
-        item.quantity += action.payload.quantity;
-      } else {
-        state.products.push( action.payload );
+        if ( item ) {
+          item.quantity += action.payload.quantity;
+        } else {
+          state.products.push( action.payload );
+        }
       }
     },
     removeItem: (state, action) => {
-        state.products = state.products.filter( item => item.id !== action.payload.id );
+      state.products = state.products.filter( item => item.id !== action.payload.id );
     },
     resetCart: (state) => {
-        state.products = [];
+      state.products = [];
     },
   },
 })
