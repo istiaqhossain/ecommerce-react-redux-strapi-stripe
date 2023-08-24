@@ -34,7 +34,7 @@ export default function Product() {
     return (
       <>
         
-      <div className="bg-white">
+      
         <div className="pt-16">
           <nav aria-label="Breadcrumb">
             <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -85,19 +85,19 @@ export default function Product() {
                   <fieldset className="mt-2">
                     <legend className="sr-only">Choose a quantity</legend>
                     <div className="mt-2 flex items-center">
-                      <button onClick={() => handleQuantity(-1)} type="button" className="rounded-s-md h-11 flex items-center justify-center border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-light text-white hover:bg-indigo-700">-</button>
-                      <span className="h-11 font-bold text-xl w-20 border-0 px-3 py-2 text-center text-gray-900 shadow-sm placeholder:text-gray-400 ring-2 ring-inset ring-indigo-600">{quantity}</span>
-                      <button onClick={() => handleQuantity(1)} type="button" className="rounded-e-md h-11 flex items-center justify-center border border-transparent bg-indigo-600 px-3 py-1.5 text-2xl font-light text-white hover:bg-indigo-700">+</button>
+                      <button onClick={() => handleQuantity(-1)} type="button" className="rounded-s-md h-11 flex items-center justify-center border border-transparent bg-gray-100 px-3 py-1.5 text-2xl font-light text-gray-900 hover:bg-gray-200">-</button>
+                      <span className="h-11 font-bold text-xl w-20 border-0 px-3 py-2 text-center text-gray-900 shadow-sm ring-2 ring-inset ring-gray-100">{quantity}</span>
+                      <button onClick={() => handleQuantity(1)} type="button" className="rounded-e-md h-11 flex items-center justify-center border border-transparent bg-gray-100 px-3 py-1.5 text-2xl font-light text-gray-900 hover:bg-gray-200">+</button>
                     </div>
                   </fieldset>
                 </div>
 
-                <button onClick={handleAddToCart} type="buton" className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to cart</button>
+                <button onClick={handleAddToCart} type="buton" className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Add to cart</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      
 
       </>
     )
